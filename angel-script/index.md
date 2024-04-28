@@ -1,0 +1,1 @@
+Перевод документации для [`AngelScript`](https://www.angelcode.com/angelscript/) и личные заметки.
