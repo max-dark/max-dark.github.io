@@ -14,4 +14,11 @@
 
 #  Ресурсы для изучения
 
+ - [original docs](https://www.angelcode.com/angelscript/) - оригинальная документация
+ - [unrealengine-angelscript](https://angelscript.hazelight.se/) - форк UE с поддержкой `AngelScript`
+ - [playground](https://github.com/max-dark/angelscript-playground)
+
 # Связь с автором
+
+ - [original docs](https://www.angelcode.com/angelscript/)
+ - [переводчик](https://github.com/max-dark/)
