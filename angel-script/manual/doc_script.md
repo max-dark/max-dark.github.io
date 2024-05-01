@@ -484,6 +484,25 @@ int valueOfLife()
 
 ## Выражения (Expressions)
 
+### Assignments
+### Function call
+### Math operators
+### Bitwise operators
+### Compound assignments
+### Logic operators
+### Equality comparison operators
+### Relational comparison operators
+### Identity comparison operators
+### Increment operators
+### Indexing operator
+### Conditional expression
+### Member access
+### Handle-of
+### Parenthesis
+### Scope resolution
+### Type conversions
+### Anonymous objects
+
 ## Типы данных (Data types)
 
 ## Функции (Functions)
