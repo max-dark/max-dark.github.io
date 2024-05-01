@@ -312,6 +312,15 @@ const float pi = 3.121592f;
 Переменные составных типов будут инициализированы значением "по умолчанию": Handles - null, у объектов вызван `default constructor`.
 
 ### expression statement
+```angelscript
+a = b; // assignment
+func(); // function call
+```
+Любое выражение может быть расположено на отдельной строке как `statement`. Обычно это присвоение значений или вызов функции.
+
+Все `expression statement` должны оканчиваться `;`
+
+
 ### conditions: if / if-else / switch
 ### loops: while / do-while / for
 ### loop control: break / continue
