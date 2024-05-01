@@ -222,6 +222,60 @@ typedef double real64;
 ```
 
 ### namespaces
+
+Пространства имен("namespace") используются для организации больших проектов в логические модули, что может упростить понимание и запоминание структуры.  
+При использовании "namespace" так же нет необходимости волноваться о пересечении имен с другими частями проекта, использующих другое пространство имен.
+
+```angelscript
+namespace A
+{
+    // сущности в одном namespace могут обращаться к друг другу
+    void function() { variable++; }
+    int variable;
+}
+
+namespace B
+{
+    // можно переиспользовать имена из других namespace
+    // для доступа к именам из других используется scope operator(::)
+    void function() { A::function(); }
+}
+```
+
+Обратите внимание, что для ссылки на объект из другого пространства имен необходимо использовать оператор области видимости, за исключением случаев, когда это родительское пространство имен.  
+Это необходимо только в том случае, если дочернее пространство имен объявляет тот же объект.
+
+```angelscript
+
+int var;
+namespace Parent
+{
+    int var;
+    namespace Child
+    {
+        int var;
+        void func()
+        {
+            // Accessing variable in parent namespace requires 
+            // specifying the scope if an entity in a child namespace
+            // uses the same name
+            var = Parent::var;
+
+            // To access variables in global scope the scoping 
+            // operator without any name should be used
+            Parent::var = ::var;
+        }
+    }
+}
+
+void func()
+{
+    // Access variable in a nested namespace requires 
+    // fully qualified scope specifier
+    int var = Parent::Child::var;
+}
+```
+
 ### imports
 
 ## Инструкции (Statements)
