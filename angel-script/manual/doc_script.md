@@ -292,6 +292,15 @@ import void MyFunction(int a, int b) from "another module";
 
 ## Инструкции (Statements)
 
+### variable declarations
+### expression statement
+### conditions: if / if-else / switch
+### loops: while / do-while / for
+### loop control: break / continue
+### return statement
+### statement blocks
+### try-catch blocks
+
 ## Выражения (Expressions)
 
 ## Типы данных (Data types)
