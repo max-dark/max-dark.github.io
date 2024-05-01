@@ -200,7 +200,27 @@ enum MyEnum
 ```
 
 ### funcdefs
+
+`funcdef` используется для создания указателей на функции задания сигнатуры этих функций.  
+В указателе может быть так же сохранен указатель на объект.  
+В дальнейшем указатель на функцию может быть использован так же как и обычная функция.
+
+```angelscript
+// define function signature
+funcdef bool CallBack(int, int);
+```
+
 ### typedefs
+
+`typedef` используется для создания "псевдонимов" типов.
+
+На данный момент поддерживаются только примитивные типы.
+
+```angelscript
+typedef float  real32;
+typedef double real64;
+```
+
 ### namespaces
 ### imports
 
