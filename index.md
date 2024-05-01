@@ -43,3 +43,44 @@ print("Hello!")
 
 echo "Hello!" . PHP_EOL;
 ```
+
+```lua
+-- lua
+print("Hello!")
+```
+
+```d
+// D
+import std.stdio;
+
+void main()
+{
+    writeln("Hello!");
+}
+```
+
+```java
+// Java
+import java.util.*;
+import java.lang.*;
+
+class Program
+{  
+    public static void main(String args[])
+    {
+        System.out.println("Hello!");
+    }
+}
+```
+
+```csharp
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Hello!");
+    }
+}
+```
