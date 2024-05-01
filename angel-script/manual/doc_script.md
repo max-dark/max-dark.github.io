@@ -87,6 +87,99 @@ class MyClass: MyInterface
 Классы могут реализовывать по несколько интерфейсов: просто перечислите нужные через запятую.
 
 ### mixin class
+
+Множественное наследование не поддерживается, но в некоторых случаях нужно реализовать идентичный код в нескольких классах. Если это необходимо, то рекомендуется использовать "миксины"("примеси", "mixin classes") для исключения написания одного и того же кода в разных местах.
+
+Миксины позволяют вынести часть структуры класса и включать код во множество классов. Сами по себе миксины не являются самостоятельными типами и не могут быть инстантированы.
+
+Когда миксин включается в объявление класса, все свойства и методы, определенные в "mixin class", автоматически "копируются" в этот класс.
+
+```angelscript
+mixin class MyMixin
+{
+    void SomeMethod() { property++; }
+    int property;
+}
+
+class MyClass: MyMixin
+{
+    int OtherMethod()
+    {
+        SomeMethod();
+        return property;
+    }
+}
+```
+
+Свойства и методы, явно определенные в классе, не будут включены снова. Таким образом, миксин может предоставлять реализацию "по умолчанию", а классы переопределять её.
+
+Код миксинов компилируется в контексте класса, в который они включены. Тем самым миксин может ссылаться на сущности, которые не объявлены в нем самом.
+
+```angelscript
+mixin class MyMixin
+{
+    void MethodA() { print("Default"); }
+    void MethodB() { property++; }
+}
+
+class MyClass: MyMixin
+{
+    // override method
+    void MethodA() { print("Override") }
+
+    // declare property that used by MyMixin
+    int property;
+}
+```
+
+При наследовании методы из "mixin class" переопределяют методы из базового класса как будто определены в производном классе. С другой стороны свойства из миксинов не копируются, если в базовом классе уже есть свойства с такими именами.
+
+```angelscript
+class MyBase
+{
+    void MethodA() { print("Base"); }
+    int property;
+}
+
+mixin class MyMixin
+{
+    void MethodA() { print("Mixin"); }
+    float property;
+}
+
+// we got:
+// 'property' from base class
+// 'MethodA' from mixin class
+class MyClass: MyBase, MyMixin
+{}
+```
+
+Миксин может содержать в объявлении список интерфейсов. В этом случае часть методов может быть реализована в самом миксине, а часть в том классе, куда миксин подключается.
+
+Миксины не могут быть "наследниками" других классов.
+
+```angelscript
+interface I
+{
+    void a();
+    void b();
+}
+
+mixin class MyMixin: I
+{
+    void a() { print("mixin implementation"); }
+
+    // leave b() do not implemented
+}
+
+class MyClass: MyMixin
+{
+    // a() from MyMixin
+
+    void b() { print("class implementation"); }
+}
+```
+
 ### funcdefs
 ### typedefs
 ### namespaces
