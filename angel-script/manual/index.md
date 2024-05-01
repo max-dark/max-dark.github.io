@@ -4,6 +4,8 @@
 
 ## Содержание
 
- - [Руководство разработчика](https://www.angelcode.com/angelscript/sdk/docs/manual/main_topics.html)
- - [Описание языка](https://www.angelcode.com/angelscript/sdk/docs/manual/doc_script.html)
- - [API Reference](https://www.angelcode.com/angelscript/sdk/docs/manual/modules.html)
+ - [Руководство разработчика(en)](https://www.angelcode.com/angelscript/sdk/docs/manual/main_topics.html)
+ - [Руководство разработчика(ru)](doc_developer.md)
+ - [Описание языка(en)](https://www.angelcode.com/angelscript/sdk/docs/manual/doc_script.html)
+ - [Описание языка(ru)](doc_script.md)
+ - [API Reference(en)](https://www.angelcode.com/angelscript/sdk/docs/manual/modules.html)
