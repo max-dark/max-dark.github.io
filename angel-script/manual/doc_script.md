@@ -602,17 +602,52 @@ if (a and b or not c)
 Каждый логический оператор может быть записан символами: `||` - `or`, `&&` - `and`, `^^` - `xor`, `!` - `not`.
 
 ### Equality comparison operators
+```angelscript
+```
+
 ### Relational comparison operators
+```angelscript
+```
+
 ### Identity comparison operators
+```angelscript
+```
+
 ### Increment operators
+```angelscript
+```
+
 ### Indexing operator
+```angelscript
+```
+
 ### Conditional expression
+```angelscript
+```
+
 ### Member access
+```angelscript
+```
+
 ### Handle-of
+```angelscript
+```
+
 ### Parenthesis
+```angelscript
+```
+
 ### Scope resolution
+```angelscript
+```
+
 ### Type conversions
+```angelscript
+```
+
 ### Anonymous objects
+```angelscript
+```
 
 ## Типы данных (Data types)
 
