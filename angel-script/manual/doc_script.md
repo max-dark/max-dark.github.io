@@ -532,9 +532,75 @@ func(flagB: true, flagA: true);
 ```
 
 ### Math operators
+
+```angelscript
+c = -(a + b)
+```
+
+|оператор|описание|lhs|rhs|результат|
+|:--:|:---------|:-:|:-:|:-:|
+| +  |унарный + | - |NUM|NUM|
+| -  |унарный - | - |NUM|NUM|
+| +  |сложение  |NUM|NUM|NUM|
+| -  |вычитание |NUM|NUM|NUM|
+| *  |умножение |NUM|NUM|NUM|
+| /  |деление   |NUM|NUM|NUM|
+| %  |остаток   |NUM|NUM|NUM|
+| ** |степень   |NUM|NUM|NUM|
+
+Плюс и минус могут быть использованы как унарные операторы. NUM может быть любым арифметическим типом(например `int` или`float`). Оба аргумента парной операции неявно преобразуются к одному типу. Результат всегда имеет тот же тип что и параметры. Исключением является унарный минус - эта операция не определена для `uint`
+
 ### Bitwise operators
+
+```angelscript
+c = ~(a | b)
+```
+
+|оператор|описание|lhs|rhs|результат|
+|:----:|:---------|:-:|:-:|:-:|
+|   ~  |bitwise complement| - |NUM|NUM|
+|   &  |bitwise and|NUM|NUM|NUM|
+|&#124;|bitwise or |NUM|NUM|NUM|
+| ^    |bitwise xor|NUM|NUM|NUM|
+| <<   |left shift |NUM|NUM|NUM|
+| >>   |right shift|NUM|NUM|NUM|
+| >>>  |arithmetic right shift|NUM|NUM|NUM|
+
+ Все операторы - парные, за исключением `~`.
+
+ перед операцией оба параметра могут быть конвертированы в `integer` для сохранения знака оригинальных типов. Результат всегда того же типа, что и `lhs`
+
 ### Compound assignments
+
+```angelscript
+lvalue += rvalue;
+lvalue = lvalue + rvalue;
+```
+Составное присвоение - это комбинация оператора с последующим присваиванием. Два выражения выше по сути одно и то же.  
+Разница - первое быстрее, так как вычисляется один раз, что может иметь значение, когда `lvalue` сложное выражение.
+
+Доступные операторы: `+=`, `-=`, `*=`, `/=`, `%=`, `**=`, `&=`, `|=`, `^=`, `<<=`, `>>=`, `>>>=`.
+
 ### Logic operators
+
+```angelscript
+if (a and b or not c)
+{
+    // ...
+}
+```
+
+|оператор|описание|lhs|rhs|результат|
+|:-:|:---------|:--:|:--:|:--:|
+|not|logical not|-|bool|bool|
+|and|logical and|bool|bool|bool|
+|or |logical or |bool|bool|bool|
+|xor|logical exclusive or|bool|bool|bool|
+
+Булевские операторы вычисляют только необходимые выражения. Например в `a and b` выражение `b` вычисляется только при `a == true`.
+
+Каждый логический оператор может быть записан символами: `||` - `or`, `&&` - `and`, `^^` - `xor`, `!` - `not`.
+
 ### Equality comparison operators
 ### Relational comparison operators
 ### Identity comparison operators
