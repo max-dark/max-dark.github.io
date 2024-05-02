@@ -752,7 +752,7 @@ func(MyClass(1, 2, 3));
 Анонимные объекты могут созданы с использованием списка инициализации(для типов поддерживающие их).
 ```angelscript
   // Call the function with a dictionary, explicitly informing the type of the initialization list
-  func(dictionary = {{'banana',1}, {'apple',2}, {'orange',3}});
+  func(dictionary = { {"banana",1}, {"apple",2}, {"orange",3} } );
 
   // When there is only one possible type that support initialization lists it is possible  
   // to omit the type and let the compiler implicitly determine it based on the use
